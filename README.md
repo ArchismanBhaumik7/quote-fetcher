@@ -1,8 +1,36 @@
-# React + Vite
+# Quote Fetcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application that fetches and displays random quotes using the [Quotable API](https://github.com/lukePeavey/quotable).
 
-Currently, two official plugins are available:
+Built using Vite + React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Fetch and displays random quotes along with their quotee.
+
+## Prerequisites for running locally
+Make sure you have the following installed before:
+- [Node.js] (https://nodejs.org/en) (LTS Version recommended)
+- [Git] (https://git-scm.com/)
+
+## Installation
+1. Clone the repo
+2. Install the dependencies
+	```
+	npm install
+	```
+## Running the Project
+
+To start the development server, run
+	```
+	npm run dev
+	```
+The server will be running at port 5173 by default.
+	```
+	http://localhost:5173/
+	```
+
+The built files will be generated in the `dist/` folder.
+
+## Contributing
+
+This project is currently **not accepting** contributions.
