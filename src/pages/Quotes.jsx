@@ -35,7 +35,7 @@ const Quotes = () => {
 			</div>}
 			<div className="quotespace">
 				<div className="quote-box-row flex">
-					<div className="quotebox" onClick={async () => {
+					<div className=" border-white border-2 m-2.5 h-[275px] w-[275px] cursor-pointer" onClick={async () => {
 						let quote_holder = await fetchQuote()
 						setBox1(quote_holder)
 					}}>
