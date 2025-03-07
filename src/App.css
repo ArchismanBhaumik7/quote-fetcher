@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -49,14 +51,6 @@
   max-width: 275px;
   margin: 10px;
   cursor: pointer;
-}
-
-.flex{
-  display: flex;
-}
-
-.quote-boxrow{
-  height: 295px;
 }
 
 .quote-content{
