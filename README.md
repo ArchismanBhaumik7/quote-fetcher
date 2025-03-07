@@ -9,8 +9,8 @@ Built using Vite + React.
 
 ## Prerequisites for running locally
 Make sure you have the following installed before:
-- [Node.js] (https://nodejs.org/en) (LTS Version recommended)
-- [Git] (https://git-scm.com/)
+- [Node.js](https://nodejs.org/en) (LTS Version recommended)
+- [Git](https://git-scm.com/)
 
 ## Installation
 1. Clone the repo
@@ -21,13 +21,12 @@ Make sure you have the following installed before:
 ## Running the Project
 
 To start the development server, run
-	```
-	npm run dev
-	```
+
+```	npm run dev	```
+
 The server will be running at port 5173 by default.
-	```
-	http://localhost:5173/
-	```
+
+```	http://localhost:5173/	```
 
 The built files will be generated in the `dist/` folder.
 
