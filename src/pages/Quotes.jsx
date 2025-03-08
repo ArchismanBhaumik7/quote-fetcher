@@ -18,7 +18,44 @@ const fetchQuote = async () => {
 	return quote
 }
 
-const Quotes = () => {
+const QuoteBoxes = () => {
+	const [quotes, setQuotes] = useState(Array(9).fill({ content: "", author: "" }));
+
+	const handleClick = async (index) => {
+		do {
+			var quote = await fetchQuote();
+		} while (quote.content.length > 100);
+		//Quotes that are too long causes the content to overflow out of the box
+		//Now only quotes smaller than 100 characters will be accepted
+		setQuotes((prevQuotes) => {
+			const newQuotes = [...prevQuotes];
+			newQuotes[index] = quote;
+			return newQuotes;
+		});
+	};
+
+	return (
+		<div className="grid grid-cols-3 max-md:grid-cols-1 gap-4 max-lg:gap-5">
+			{quotes.map((quote, index) => (
+				<div
+					key={index}
+					className="quotebox border-white border-2 m-2.5 h-[275px] w-[275px]
+					max-lg:max-h-56 max-lg:max-w-56 cursor-pointer"
+					onClick={() => handleClick(index)}
+				>
+					<div className="quote-content py-9 px-2.5 lg:py-12">
+						{quote.content}
+					</div>
+					<div className="quote-author py-2.5">
+						{quote.author}
+					</div>
+				</div>
+			))}
+		</div>
+	);
+};
+
+/*const Quotes = () => {
 	const [box1, setBox1] = useState({ "content": "", "author": "" })
 	const [box2, setBox2] = useState({ "content": "", "author": "" })
 	const [box3, setBox3] = useState({ "content": "", "author": "" })
@@ -30,19 +67,19 @@ const Quotes = () => {
 	const [box9, setBox9] = useState({ "content": "", "author": "" })
 	return (
 		<>
-			{<div>
+			<div>
 				Quotes go here!
-			</div>}
+			</div>
 			<div className="quotespace">
 				<div className="quote-box-row flex">
-					<div className=" border-white border-2 m-2.5 h-[275px] w-[275px] cursor-pointer" onClick={async () => {
+					<div className="quotebox border-white border-2 m-2.5 h-[275px] w-[275px] cursor-pointer" onClick={async () => {
 						let quote_holder = await fetchQuote()
 						setBox1(quote_holder)
 					}}>
-						<div className="quote-content">
+						<div className="quote-content py-9 px-2.5">
 							{box1.content}
 						</div>
-						<div className="quote-author">
+						<div className="quote-author py-2.5">
 							{box1.author}
 						</div>
 					</div>
@@ -155,6 +192,6 @@ const Quotes = () => {
 			</div>
 		</>
 	)
-}
+}*/
 
-export default Quotes
+export default QuoteBoxes
